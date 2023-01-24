@@ -83,7 +83,7 @@ class SkapaObject(LoginRequiredMixin,CreateView):
     def get_context_data(self,**kwargs):
         context=super().get_context_data(**kwargs)
         lista=get_object_or_404(List,id=self.kwargs.get('l_pk'))
-        context['status'] = {"status":"Ny",'listID':lista.id}
+        context['status'] = {"status":"Ny","listID":lista.id}
         return context
 
     def form_valid(self,form):
@@ -104,5 +104,4 @@ class RaderaObject(LoginRequiredMixin,DeleteView):
 
     def get_success_url(self):
         lista = self.object.list
-        return reverse_lazy('lista-sida', kwargs={'pk':lista.id})
-
+        return reverse_lazy( 'lista-sida', kwargs={'pk': lista.id})

@@ -24,4 +24,4 @@ class Object(models.Model):
         return self.objectname
 
     def get_absolute_url(self):
-        return reverse('lista-sida',kwargs={'pk':self.list.pk})
+        return reverse('lista-sida', kwargs={'pk':self.list.id})

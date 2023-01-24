@@ -8,14 +8,13 @@
 		<fieldset>
 			<legend>{{status.status}} lista</legend> 
 		{{ form|crispy }}  
-	</fieldset>                    
+	</fieldset>                  
 		<button class="btn btn-primary" type="submit">Spara lista</button>
 		{% if status.status == "Uppdatera" %}
 		<a class="btn btn-primary" href="{% url 'lista-sida' object.id %}">Ångra</a>
 		{% else %}
 		<a class="btn btn-primary" href="{% url 'listor-hem' %}">Ångra</a>
 		{% endif %}
-
 	</form>
 </div>
 {% endblock innehall %}
